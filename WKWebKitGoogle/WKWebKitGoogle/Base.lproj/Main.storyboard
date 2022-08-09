@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZDE-Qb-zcb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buscador APP-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WKWebKitGoogle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="DGa-WI-0s4">
+                                <rect key="frame" x="50" y="88" width="314" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="chu-nP-6QD">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="TC3-sN-Ptl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="O que quer buscar?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYL-SA-w24">
+                                        <rect key="frame" x="0.0" y="400" width="314" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="aAp-uk-fYf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NU-XE-AAw">
+                                        <rect key="frame" x="0.0" y="505" width="314" height="55"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="di9-Mr-GMq"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Buscar">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buscarAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9P-kW-wDT"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tT-C8-6m6">
+                                        <rect key="frame" x="0.0" y="610" width="314" height="164"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DGa-WI-0s4" secondAttribute="bottom" id="BGi-eb-sa4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DGa-WI-0s4" secondAttribute="trailing" constant="50" id="SpK-xy-9HY"/>
+                            <constraint firstItem="DGa-WI-0s4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="h2k-gX-Y07"/>
+                            <constraint firstItem="DGa-WI-0s4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ttO-sq-GS8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Buscador APP" id="rPg-Ri-1Ah"/>
+                    <connections>
+                        <outlet property="buscarPalavraTF" destination="dYL-SA-w24" id="yP0-Xj-rRD"/>
+                        <outlet property="buttonBuscarBtn" destination="5NU-XE-AAw" id="OoL-IG-mI7"/>
+                        <segue destination="0Hg-DW-uza" kind="show" identifier="buscar" id="LHF-yl-JaS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="426.08695652173918" y="-798.21428571428567"/>
+        </scene>
+        <!--Pagina Web View Controller-->
+        <scene sceneID="1JN-ed-57I">
+            <objects>
+                <viewController id="0Hg-DW-uza" customClass="PaginaWebViewController" customModule="WKWebKitGoogle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WwU-Dv-A0p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shv-dM-j67">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vf7-5s-7vX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vf7-5s-7vX" firstAttribute="trailing" secondItem="shv-dM-j67" secondAttribute="trailing" id="9wE-Nf-VHg"/>
+                            <constraint firstItem="vf7-5s-7vX" firstAttribute="bottom" secondItem="shv-dM-j67" secondAttribute="bottom" id="El3-MU-Rxg"/>
+                            <constraint firstItem="shv-dM-j67" firstAttribute="top" secondItem="vf7-5s-7vX" secondAttribute="top" id="XdF-Ha-2O8"/>
+                            <constraint firstItem="shv-dM-j67" firstAttribute="leading" secondItem="vf7-5s-7vX" secondAttribute="leading" id="paN-gQ-ccp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L4W-UK-ClN"/>
+                    <connections>
+                        <outlet property="webPagina" destination="shv-dM-j67" id="rfb-BV-VRL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKy-e4-qHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239.1304347826087" y="-798.21428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eVg-XC-5Bw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZDE-Qb-zcb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hlN-1C-Gl3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2yv-2Z-eN4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WX3-76-Stf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484.05797101449281" y="-798.21428571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Unknown" width="387" height="130"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
